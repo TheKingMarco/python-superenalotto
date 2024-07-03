@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulatore SuperEnalotto</title>
+    <script>
+        async function estraiNumeri() {
+            const response = await fetch('https://il-tuo-backend-url/estrai');
+            const data = await response.json();
+            document.getElementById('numeri').innerText = `Numeri: ${data.numeri_estratti.join(', ')}`;
+            document.getElementById('jolly').innerText = `Jolly: ${data.numero_jolly}`;
+            document.getElementById('superstar').innerText = `Superstar: ${data.numero_superstar}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Simulatore SuperEnalotto</h1>
+    <button onclick="estraiNumeri()">Estrai Numeri</button>
+    <p id="numeri">Numeri: </p>
+    <p id="jolly">Jolly: </p>
+    <p id="superstar">Superstar: </p>
+</body>
+</html>
+
