@@ -6,7 +6,7 @@
     <title>Simulatore SuperEnalotto</title>
     <script>
         async function estraiNumeri() {
-            const response = await fetch('https://il-tuo-backend-url/estrai');
+            const response = await fetch('https://superenalotto.olivapro.it');
             const data = await response.json();
             document.getElementById('numeri').innerText = `Numeri: ${data.numeri_estratti.join(', ')}`;
             document.getElementById('jolly').innerText = `Jolly: ${data.numero_jolly}`;
